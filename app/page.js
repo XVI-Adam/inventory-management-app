@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { Box, Stack, Typography, Button, Modal, TextField } from '@mui/material'
-import { firestore } from '@/firebase'
 import {
   collection,
   doc,
@@ -11,7 +10,11 @@ import {
   setDoc,
   deleteDoc,
   getDoc,
+  getFirestore,
 } from 'firebase/firestore'
+
+import { firestore } from '@/firebase';
+
 
 const style = {
   position: 'absolute',
@@ -30,6 +33,7 @@ const style = {
 
 export default function Home() {
   // We'll add our component logic here
+
   const [inventory, setInventory] = useState([])
   const [open, setOpen] = useState(false)
   const [itemName, setItemName] = useState('')
